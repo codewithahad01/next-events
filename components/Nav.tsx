@@ -1,18 +1,18 @@
 import React from 'react'
 
 function Nav() {
-    let helloWorld = "Hello World";
-    let helloWorld2: string
+    // let helloWorld = "Hello World";
+    // let helloWorld2: string
     
-    interface User {
-        name: string;
-        id: number;
-      }
+    // interface User {
+    //     name: string;
+    //     id: number;
+    //   }
 
-    const user: User = {
-        name: "Hayes",
-        id: 0,
-      };
+    // const user: User = {
+    //     name: "Hayes",
+    //     id: 0,
+    //   };
     return (
         <div>
             
