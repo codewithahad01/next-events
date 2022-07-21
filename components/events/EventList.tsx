@@ -4,7 +4,7 @@ import EventItem from "./EventItem";
 function EventList(props) {
     const { items } = props;
     return (
-        <div>
+        <div className="flex justify-center items-center pt-44 ">
         <ul>
             {items.map((event) => (
             <EventItem
