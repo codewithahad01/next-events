@@ -1,6 +1,7 @@
 import React from "react";
 import Image from 'next/image'
 import Link from "next/link"
+import Button from "../ui/button";
 
 function EventItem(props) {
     const { title, image, date, location, id } = props;
@@ -29,9 +30,8 @@ function EventItem(props) {
             <div>
             <address>{location}</address>
             </div>
-            <div className="md:mt-28 md:float-right my-2 text-purple-700 bg-yellow-400 rounded-lg p-2 shadow-xl">
-            <Link href={exploreLink}>Explor Event</Link>
-            </div>
+            <Button link={exploreLink}>Explore Event</Button>
+            
         </div>
         </li>
     );
