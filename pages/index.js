@@ -14,7 +14,7 @@ export default function Home() {
         <body className='bg-gradient-to-r from-violet-500 to-fuchsia-500'></body>
       </Head>
 
-      
+
       <EventList items={featuredEvents} />
       
     </div>
