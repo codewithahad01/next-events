@@ -18,13 +18,14 @@ function EventItem(props) {
 
     return (
         <li className=" p-6 border my-6 bg-cyan-600 text-white rounded-lg shadow-xl md:flex md:m-10">
-        <div className="flex  md:justify-center md:items-center">
+        <div className="h-64 w-96 relative mb-4 md:h-80 md:flex md:justify-center md:mt-6">
             <Image
             src={"/" + image}
             alt={title}
-            width="350"
-            height="250"
-            layout="fixed"
+            // width="350"
+            // height="250"
+            layout="fill"
+            objectFit="cover"
             ></Image>
         </div>
         <div className="text-gray-300 md:p-4 md:my-4">
