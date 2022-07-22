@@ -1,14 +1,26 @@
 import React from 'react'
 import Button from '../ui/button'
+import { useRef} from 'react'
 
 function EventSearch(props) {
+    const yearInputRef = useRef()
+    const monthInputRef = useRef()
+
+    function submitHandler(event) {
+        event.preventDefault()
+        const selectedyear = yearInputRef.current.value
+        const selectedmonth = monthInputRef.current.value
+
+        props.onSearch(selectedyear, selectedmonth)
+    }
+
     return (
-        <form className='py-10 px-16 border bg-cyan-600'>
+        <form onSubmit={submitHandler} className='flex justify-center items-center mx-auto rounded-lg shadow-xl py-10 px-16 border bg-cyan-600 md:w-2/3 lg:w-3/6 '>
             <div className='flex justify-center items-center'>
 
                 <div className='mx-2'>
                     <label className='font-bold' htmlFor="year">Year</label>
-                    <select className='rounded-sm ring-2 md:mx-4' id='year'>
+                    <select className='rounded-sm ring-4 md:mx-4' ref={yearInputRef} id='year'>
                         <option value="2021">2021</option>
                         <option value="2022">2022</option>
                     </select>
@@ -16,7 +28,7 @@ function EventSearch(props) {
 
                 <div className='mx-2'>
                     <label className='font-bold' htmlFor="month">Month</label>
-                    <select className='rounded-sm ring-2 md:mx-4' id='month'>
+                    <select className='rounded-sm ring-4 md:mx-4' ref={monthInputRef} id='month'>
                         <option value="1">January</option>
                         <option value="2">February</option>
                         <option value="3">March</option>
