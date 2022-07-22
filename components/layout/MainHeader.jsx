@@ -4,13 +4,13 @@ import React from 'react'
 function MainHeader() {
     return (
         
-        <header>
-            <div>
+        <header className='flex flex-row text-violet-400 justify-between bg-gray-800 py-6 px-4 md:text-4xl'>
+            <div className='font-extrabold text-2xl '>
                 <Link href='/'>NextEvents</Link>
             </div>
-            <nav>
+            <nav className=''>
                 <uL>
-                    <li>
+                    <li className='text-xl'>
                         <Link href='/events'>Browse All Events</Link>
                     </li>
                 </uL>
