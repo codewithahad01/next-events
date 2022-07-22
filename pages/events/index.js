@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { getAllEvents } from '../../dummy-data'
+import EventList from '../../components/events/EventList'
+import EventSearch from '../../components/events/EventSearch'
+
 
 function AllEventsPage() {
+    const events = getAllEvents() 
     return (
-        <div>
-            <h1>All Events</h1>
-        </div>
+        <Fragment>
+            <EventSearch  />
+            <EventList items={events} />
+        </Fragment>
     )
 }
 
