@@ -11,7 +11,7 @@ function MainHeader() {
             <nav>
                 <uL>
                     <li>
-                        <Link href='/'>All Events</Link>
+                        <Link href='/events'>Browse All Events</Link>
                     </li>
                 </uL>
             </nav>
