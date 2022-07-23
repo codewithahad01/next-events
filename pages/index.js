@@ -2,18 +2,11 @@ import Head from 'next/head'
 import { getFeaturedEvents } from '../dummy-data'
 import EventList from '../components/events/EventList'
 import { useState, useEffect } from 'react'
-import Button from '../components/ui/button'
 
 
 export default function Home() {
-  const [count, setcount] = useState(10)
-  const [useage, setUsage] = useState(false)
-  const [factor, setFactor] = useState
   const featuredEvents = getFeaturedEvents()
 
-  const handleCount = () => {
-    setcount(count + 1)
-  }
   return (
     <div>
       <Head>
@@ -23,10 +16,6 @@ export default function Home() {
         <body className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'></body>
       </Head>
 
-      <button onClick={handleCount}>
-        Count
-      </button>
-      <p>Clicked {count} times</p>
 
       <EventList items={featuredEvents} />
       
