@@ -29,6 +29,77 @@ const DUMMY_EVENTS = [
         image: 'images/extrovert-event.jpg',
         isFeatured: true,
         },
+        {
+            id: 'e4',
+            title: 'Networking for extroverts',
+            description:
+                'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+            location: 'My Street 12, 10115 Broke City',
+            date: '2022-01-10',
+            image: 'images/extrovert-event.jpg',
+            isFeatured: true,
+            },
+            {
+                id: 'e5',
+                title: 'Networking for extroverts',
+                description:
+                    'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+                location: 'My Street 12, 10115 Broke City',
+                date: '2022-04-10',
+                image: 'images/extrovert-event.jpg',
+                isFeatured: true,
+                },
+                {
+                    id: 'e6',
+                    title: 'Networking for extroverts',
+                    description:
+                        'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+                    location: 'My Street 12, 10115 Broke City',
+                    date: '2022-12-10',
+                    image: 'images/extrovert-event.jpg',
+                    isFeatured: true,
+                    },
+                    {
+                        id: 'e7',
+                        title: 'Networking for extroverts',
+                        description:
+                            'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+                        location: 'My Street 12, 10115 Broke City',
+                        date: '2022-09-20',
+                        image: 'images/extrovert-event.jpg',
+                        isFeatured: true,
+                        },
+                        {
+                            id: 'e8',
+                            title: 'Networking for extroverts',
+                            description:
+                                'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+                            location: 'My Street 12, 10115 Broke City',
+                            date: '2022-04-10',
+                            image: 'images/extrovert-event.jpg',
+                            isFeatured: true,
+                            },
+                            {
+                                id: 'e9',
+                                title: 'Networking for extroverts',
+                                description:
+                                    'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+                                location: 'My Street 12, 10115 Broke City',
+                                date: '2022-03-10',
+                                image: 'images/extrovert-event.jpg',
+                                isFeatured: true,
+                                },
+                                {
+                                    id: 'e10',
+                                    title: 'Networking for extroverts',
+                                    description:
+                                        'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+                                    location: 'My Street 12, 10115 Broke City',
+                                    date: '2022-06-10',
+                                    image: 'images/extrovert-event.jpg',
+                                    isFeatured: true,
+                                    },
+        
     ];
     
     export function getFeaturedEvents() {
