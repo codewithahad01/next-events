@@ -7,7 +7,7 @@ import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/ErrorAlert";
 
 
-function FliteredEventsPage() {
+function FliteredEventsPage(props) {
     const router = useRouter();
 
     const filterData = router.query.slug;
@@ -24,14 +24,7 @@ function FliteredEventsPage() {
     const numYear = +filteredYear;
     const numMonth = +filteredMonth;
 
-    if (
-        isNaN(numYear) ||
-        isNaN(numMonth) ||
-        numYear > 2030 ||
-        numYear < 2021 ||
-        numMonth < 1 ||
-        numMonth > 12
-    ) {
+    if (props.hasError) {
         return (
         <Fragment>  
             <ErrorAlert>  
@@ -73,6 +66,45 @@ function FliteredEventsPage() {
             <EventList items={filteredEvents} />
         </Fragment>
     );
+}
+
+
+export async function getServerSideProps(context) {
+    const { params } = context
+
+    const filterData = params.slug
+
+    const filteredYear = filterData[0];
+    const filteredMonth = filterData[1];
+
+    const numYear = +filteredYear;
+    const numMonth = +filteredMonth;
+
+    if (
+        isNaN(numYear) ||
+        isNaN(numMonth) ||
+        numYear > 2030 ||
+        numYear < 2021 ||
+        numMonth < 1 ||
+        numMonth > 12
+    ) {
+        return {
+            props: { hasError: true},
+            // notFound: true,
+            // redirect: {
+            //     destination: '/error'
+            // }
+        }
+    }
+
+    const filteredEvents = getFilteredEvents({
+        year: numYear,
+        month: numMonth,
+    })
+
+    return {
+        props: {}
+    }
 }
 
 export default FliteredEventsPage;
