@@ -8,7 +8,7 @@ import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/ErrorAlert";
 import spinner from "../../public/spinner.gif";
 import Image from "next/image";
-
+import Head from "next/head";
 
 
 function FliteredEventsPage(props) {
@@ -34,22 +34,40 @@ function FliteredEventsPage(props) {
         }
     }, [data]);
 
+    let pageHeadData = <Head>
+            <title>Filtered Events</title>
+            <meta name="description" content={`A list of filtered events.`} />
+            <link rel="icon" href="/favicon.ico" />
+            <body className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'></body>
+        </Head>
 
     if (!loadedEvents) {
         return (
-            <div className="flex justify-center items-center mt-44">
-                <Image src={spinner} alt="spinner" width={150} height={150} />
+            <Fragment className="flex justify-center items-center mt-44">
+                    {pageHeadData}
+                <Image className="" src={spinner} alt="spinner" width={150} height={150} />
                 {/* <p className="text-xl">Loading...</p> */}
-            </div>
+            </Fragment>
         )
         
     }
 
+    
     const filteredYear = filterData[0];
     const filteredMonth = filterData[1];
 
     const numYear = +filteredYear;
-    const numMonth = +filteredMonth;
+    const numMonth = +filteredMonth; 
+
+    
+    pageHeadData = ( 
+        <Head>
+            <title>Filtered Events</title>
+            <meta name="description" content={`All Events for ${numMonth}/${numYear}`} />
+            <link rel="icon" href="/favicon.ico" />
+            <body className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'></body>
+        </Head> 
+    )
 
     if (
         isNaN(numYear) ||
@@ -63,6 +81,7 @@ function FliteredEventsPage(props) {
     )  {
         return (
         <Fragment>
+            {pageHeadData}
             <ErrorAlert>
             <p>Invalid Filter. Please Adjust your values!</p>
             </ErrorAlert>
@@ -82,7 +101,8 @@ function FliteredEventsPage(props) {
     });
     if (!filteredEvents || filteredEvents.length === 0) {
         return (
-        <Fragment>
+        <Fragment>  
+            {pageHeadData}
             <ErrorAlert>
             <p>No events found for the chosen filter!</p>
             </ErrorAlert>
@@ -97,8 +117,9 @@ function FliteredEventsPage(props) {
 
     return (
         <Fragment>
-        <ResultsTitle date={date} />
-        <EventList items={filteredEvents} />
+            {pageHeadData}
+            <ResultsTitle date={date} />
+            <EventList items={filteredEvents} />
         </Fragment>
     );
     }

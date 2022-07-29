@@ -5,6 +5,7 @@ import EventLigistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
 import Spinner from '../../public/spinner.gif'
 import Image from 'next/image'
+import Head from "next/head";
 // import ErrorAlert from "../../components/ui/ErrorAlert";
 
 function EventDetailPage(props) {
@@ -20,6 +21,12 @@ function EventDetailPage(props) {
     }
     return (
         <Fragment>
+            <Head>
+                <title>{event.title}</title>
+                <meta name="description" content={event.description} />
+                <link rel="icon" href="/favicon.ico" />
+                <body className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500'></body>
+            </Head>
         <EventSummary title={event.title} />
         <EventLigistics
             date={event.date}
